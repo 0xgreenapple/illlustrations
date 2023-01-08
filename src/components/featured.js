@@ -1,55 +1,6 @@
-
-
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
 
-
-const Featured = () => {
-  const data = useStaticQuery(graphql`
-    query featuredQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-      allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: ASC }
-        filter: { frontmatter: { featured: { eq: true } } }
-      ) {
-        edges {
-          node {
-            excerpt(format: HTML)
-            html
-            frontmatter {
-              date(formatString: "MMMM DD, YYYY")
-              title
-              author
-              category
-              tags
-              svg {
-                publicURL
-              }
-              png {
-                publicURL
-              }
-              png{
-                childImageSharp {
-                  fluid {
-                    src
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const siteTitle = data.site.siteMetadata.title
-  const illlus = data.allMarkdownRemark.edges
-
+export default function Featured(){
   return (
     <section className="illus chris">
       <div className="container">
@@ -58,7 +9,7 @@ const Featured = () => {
           <h1>20 New Illustrations</h1>
         </div>
         <div className="illus-wrap">
-        {illlus.map(({ node }) => {
+        {/* {illlus.map(({ node }) => {
           const title = node.frontmatter.title
           return (
             <div className="day-box">
@@ -83,7 +34,7 @@ const Featured = () => {
               </div>
             </div>
           )
-          })}
+          })} */}
           </div>
           <div className="feature-dwn">
             <div className="btn-lnks">
@@ -104,5 +55,3 @@ const Featured = () => {
     </section>
   )
 }
-
-export default Featured

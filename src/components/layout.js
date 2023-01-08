@@ -1,19 +1,12 @@
 import React from "react"
-import { Link } from "gatsby"
-import "./layout.scss"
-import Nav from "./nav"
 
 
-class Layout extends React.Component {
-  render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
+export default function Layout({children}){
+
     let header = (
       <>
         <div className="announce-wrapper designletter">
-
         </div>
-
       </>
     )
     return (
@@ -32,11 +25,8 @@ class Layout extends React.Component {
             <img src="/3dicons.jpg" />
           </a>
         </div>
-
-
       </div>
     )
-  }
 }
 
-export default Layout
+

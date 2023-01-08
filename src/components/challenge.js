@@ -1,11 +1,7 @@
-
-
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
 
 
-const Challange = () => {
+export default function Challange(){
   return (
     <section className="challange">
       <div className="container">
@@ -31,5 +27,3 @@ const Challange = () => {
     </section>
   )
 }
-
-export default Challange

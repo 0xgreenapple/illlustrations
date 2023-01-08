@@ -1,53 +1,6 @@
-
-
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
 
-
-const Challange = () => {
-  const data = useStaticQuery(graphql`
-    query illlustrationQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-      allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: ASC }
-      ) {
-        edges {
-          node {
-            excerpt(format: HTML)
-            html
-            frontmatter {
-              date(formatString: "MMMM DD, YYYY")
-              title
-              author
-              category
-              tags
-              svg {
-                publicURL
-              }
-              png {
-                publicURL
-              }
-              png{
-                childImageSharp {
-                  fluid {
-                    src
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const siteTitle = data.site.siteMetadata.title
-  const illlus = data.allMarkdownRemark.edges
+export default function Challange(){
   return (
     <section className="illus">
       <div className="container">
@@ -55,7 +8,7 @@ const Challange = () => {
           <h1>Explore all</h1>
         </div>
         <div className="illus-wrap">
-        {illlus.map(({ node }) => {
+        {/* {illlus.map(({ node }) => {
           const title = node.frontmatter.title
           return (
             <div className="day-box">
@@ -83,11 +36,10 @@ const Challange = () => {
               </div>
             </div>
           )
-        })}
+        })} */}
         </div>
       </div>
     </section>
   )
 }
 
-export default Challange

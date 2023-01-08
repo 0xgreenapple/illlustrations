@@ -1,11 +1,7 @@
-
-
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
 
 
-const Product = () => {
+export default function Product(){
   return (
     <section className="product">
       <div className="container">
@@ -26,9 +22,6 @@ const Product = () => {
               <img src="uiprint.svg" />
             </a>
           </div>
-
-
-
           <div className="product-box">
             <a href="https://uilogos.co/?ref=illlustrations" className="p-box"target="__blank" >
               <img src="uilogos.svg" />
@@ -39,5 +32,3 @@ const Product = () => {
     </section>
   )
 }
-
-export default Product

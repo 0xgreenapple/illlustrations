@@ -1,63 +1,16 @@
-
-
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
 
 
-const COVID19 = () => {
-  const data = useStaticQuery(graphql`
-    query covidQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-      allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
-        filter: { frontmatter: { category: { eq: "COVID" } } }
-      ) {
-        edges {
-          node {
-            excerpt(format: HTML)
-            html
-            frontmatter {
-              date(formatString: "MMMM DD, YYYY")
-              title
-              author
-              category
-              svg {
-                publicURL
-              }
-              png {
-                publicURL
-              }
-              png{
-                childImageSharp {
-                  fluid {
-                    src
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const siteTitle = data.site.siteMetadata.title
-  const illlus = data.allMarkdownRemark.edges
+export default function COVID19(){
 
   return (
     <section className="illus covid">
-
       <div className="container">
         <div className="title">
           <h1>COVID & WFH </h1>
         </div>
         <div className="illus-wrap">
-          {illlus.map(({ node }) => {
+          {/* {illlus.map(({ node }) => {
             const title = node.frontmatter.title
             return (
               <div className="day-box">
@@ -78,7 +31,7 @@ const COVID19 = () => {
                 </div>
               </div>
             )
-          })}
+          })} */}
         </div>
         <div className="feature-dwn">
           <div className="btn-lnks">
@@ -99,5 +52,3 @@ const COVID19 = () => {
     </section>
   )
 }
-
-export default COVID19

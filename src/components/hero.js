@@ -1,9 +1,7 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
 
 
-const Hero = () => {
+export default function hero() {
   return (
     <section className="hero_section">
       <div className="container">
@@ -16,7 +14,6 @@ const Hero = () => {
               <h1>Open source illustrations kit</h1>
               <p>Designed <strong>100 awesome illustrations</strong> during 100 days of illustration challenge (Now added more than <strong>120+ </strong>illustrations). You can download all illustrations completely <strong>free</strong> and <strong>use</strong> these to design awesome - landing pages, mobile app or presentations.</p>
             </div>
-
             <div className="btn-lnks">
               <div className="dwn-links">
                 <button className="btn btn-download">
@@ -57,5 +54,3 @@ const Hero = () => {
     </section>
   )
 }
-
-export default Hero

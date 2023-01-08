@@ -1,20 +1,12 @@
 import React from "react"
-import { graphql } from "gatsby"
-
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import Challange from "../components/challenge"
 import Nav from "../components/nav"
 import Footer from "../components/footer"
 
-class License extends React.Component {
-  render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-
+export default function License(){
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="illlustrations - MIT License" />
+      <Layout >
         <Nav />
         <section className="license_section">
           <div className="container">
@@ -60,17 +52,4 @@ class License extends React.Component {
         <Footer />
       </Layout>
     )
-  }
 }
-
-export default License
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
