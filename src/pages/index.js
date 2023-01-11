@@ -8,19 +8,28 @@ import Featured from "../components/featured"
 import COVID19 from "../components/covid-19"
 import Nav from "../components/nav"
 import Footer from "../components/footer"
+import { getSortedPostsData } from "../templates/blog-post"
 
-export default function Home() {
+export async function getStaticProps() {
+  const illlustrations = getSortedPostsData();
+  return {
+    props: {
+      illlustrations,
+    },
+  }
+}
+export default function Home({ illlustrations }) {
   return (
-      <Layout>
-        <Nav />
-        <Hero />
-        <COVID19 />
-        <Featured />
-        <Illustrations />
-        <Challange />
-        <Product />
-        <Footer />
-      </Layout>
+    <Layout>
+      <Nav />
+      <Hero />
+      <COVID19 />
+      <Featured />
+      <Illustrations data={illlustrations}/>
+      <Challange />
+      <Product />
+      <Footer />
+    </Layout>
   )
 }
 

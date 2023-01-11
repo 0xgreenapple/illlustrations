@@ -1,54 +1,12 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import fs from "fs"
+import path from "path"
+import matter from "gray-matter"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+const postsDirectory = path.join(process.cwd(), "content/illlustrations")
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
-
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.title || post.excerpt}
-        />
-      </Layout>
-    )
-  }
+export function getSortedPostsData() {
+  // Get file names under /posts
+  const filepath = postsDirectory+"/illustrations.json"
+  var allPostsData = JSON.parse(fs.readFileSync(filepath))
+  return allPostsData
 }
-
-export default BlogPostTemplate
-
-export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-      frontmatter {
-        title
-        date
-        author
-        category
-        tags
-        png{
-          childImageSharp {
-            fluid {
-              src
-            }
-          }
-        }
-      }
-    }
-  }
-`
