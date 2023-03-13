@@ -1,9 +1,18 @@
-import "../styles/global.scss"
+import globalStyle from "../styles/global.scss";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+import defaultTheme from "../styles/theme.config";
+
+const GlobalStyle = createGlobalStyle`
+    ${globalStyle}
+`;
 
 export default function MyApp({ Component, pageProps }) {
-  return( 
-  <main>
-    <Component {...pageProps} />
-  </main>
-  )
+  return (
+    <>
+      <ThemeProvider theme={defaultTheme}>
+        <GlobalStyle />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </>
+  );
 }

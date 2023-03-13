@@ -1,6 +1,6 @@
 import React from "react"
-import Layout from "../components/layout"
-import Nav from "../components/nav"
+import Layout from "../../v2_components/layout";
+import Nav from "../../v2_components/nav";
 
 export default function notFound() {
     return (

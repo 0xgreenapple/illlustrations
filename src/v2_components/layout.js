@@ -10,7 +10,7 @@ export default function Layout({children}){
       </>
     )
     return (
-      <div className="illlustrations_main">
+      <div className="illlustrations_main v2">
         <header>{header}</header>
         <main className="up_i">{children}</main>
         <div className="carbon-ads">

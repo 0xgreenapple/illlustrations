@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../../v2_components/layout";
 
 export default function Figma() {
     return (
