@@ -32,6 +32,6 @@
   "scripts": {
     "dev": "next dev",
     "start": "next start",
-    "buiild": "next build"
+    "build": "next build"
   }
 }

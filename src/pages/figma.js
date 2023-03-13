@@ -12,7 +12,6 @@ export default function Figma() {
                     </div>
                     <div className="menu">
                         <ul>
-
                             <li><a href="https://www.buymeacoffee.com/realvjy" className="n-btn btn-text">donate</a></li>
                             <li>
                                 <a className="n-btn btn-outline" href="https://twitter.com/intent/tweet?text=Design%20awesome%20landing%20page,%20mockup%20and%20presentations%20with%20this%20open-source%20illlustrations%20library.%20%20https://illlustrations.co%20@_illlustrations%20by%20@realvjy">Show Love<img src="/twitter.svg" /></a>
