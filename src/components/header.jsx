@@ -24,6 +24,7 @@ function header(){
                         <CoffeeBtn>
                             Buy me coffee
                         </CoffeeBtn>
+                        
                     </RightWrapper>
                 </Wrapper>
             </HeaderContainer>
@@ -42,6 +43,9 @@ const Wrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
     padding: 26px;
+    @media screen and (max-width:${({ theme }) => theme.deviceSize.smallScreen} ) {
+        padding: 26px 0;
+    }
 `;
 const LeftWrapper = styled.div`
     display: flex;
@@ -57,6 +61,9 @@ const Button = styled.a`
     cursor: pointer;
     &:hover{
         text-decoration: underline;
+    }
+    @media screen and (max-width: ${({theme})=> theme.deviceSize.tablet}){
+        display: none;
     }
 `;
 
@@ -79,5 +86,8 @@ const ImgWrapper = styled.a``;
 const Image = styled.img`
     max-height: 35px;
 `;
+
 export default header;
+
+
 

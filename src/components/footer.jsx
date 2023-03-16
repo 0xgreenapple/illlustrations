@@ -34,12 +34,19 @@ export default function footer() {
 
 const FooterSection = styled.section`
     font-family: 'Outfit', sans-serif;
+    margin-top: 200px;
+    margin-bottom: 100px;
+    @media screen and (max-width: ${({theme})=> theme.deviceSize.smallScreen}){
+        margin-top: 100px;
+    }
 `;
+
 const FooterWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-`
+`;
+
 const ContentWrap = styled.div`
     display: flex;
     flex-direction: column;
