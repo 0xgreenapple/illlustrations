@@ -178,7 +178,7 @@ const Header = styled.h1`
         font-size: 30px;
         span{
             img{
-                max-width: 100px;
+                max-width: 120px;
             }
         }
     }

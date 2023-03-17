@@ -1,30 +1,34 @@
+import Link from "next/link";
 import styled from "styled-components"
 import { Container } from "../styles/reusable-styles";
 
-function header(){
-    return(
+function header() {
+    return (
         <HeaderSection>
             <HeaderContainer>
                 <Wrapper>
                     <LeftWrapper>
-                        <ImgWrapper>
-                            <Image src="/logo/header-logo.png"/>
+                        <ImgWrapper href="/">
+                            <Image src="/logo/header-logo.png" />
                         </ImgWrapper>
                     </LeftWrapper>
                     <RightWrapper>
-                        <Button>
+                        <Button href="/illlustrations">
                             explore all
                         </Button>
-                        <Button>
+                        <Button href="/illlustrations">
                             figma
                         </Button>
-                        <MediaBtn>
+                        <MediaBtn href="/illlustrations">
                             Share on twitter
+                            <span>
+                                <img src="/logo/twitter-fill.png" />
+                            </span>
                         </MediaBtn>
-                        <CoffeeBtn>
+                        <CoffeeBtn href="/illlustrations">
                             Buy me coffee
                         </CoffeeBtn>
-                        
+
                     </RightWrapper>
                 </Wrapper>
             </HeaderContainer>
@@ -33,6 +37,7 @@ function header(){
 }
 
 const HeaderSection = styled.section`
+    text-decoration: none;
     background: ${({ theme }) => theme.colors.background_white};
 `;
 const HeaderContainer = styled(Container)`
@@ -43,7 +48,7 @@ const Wrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
     padding: 26px;
-    @media screen and (max-width:${({ theme }) => theme.deviceSize.smallScreen} ) {
+    @media screen and (max-width:${({ theme }) => theme.deviceSize.desktop} ) {
         padding: 26px 0;
     }
 `;
@@ -56,13 +61,14 @@ const RightWrapper = styled.div`
     align-items: center;
     font-size: 15px;
 `;
-const Button = styled.a`
+const Button = styled(Link)`
     margin-left: 30px;
+    text-decoration: none;
     cursor: pointer;
     &:hover{
         text-decoration: underline;
     }
-    @media screen and (max-width: ${({theme})=> theme.deviceSize.tablet}){
+    @media screen and (max-width: ${({ theme }) => theme.deviceSize.tablet}){
         display: none;
     }
 `;
@@ -73,6 +79,12 @@ const MediaBtn = styled(Button)`
     border: 1px solid black;
     padding: 12px;
     font-weight: 500;
+    span{
+        margin-left: 10px;
+        img{
+            max-height: 15px;
+        }
+    }
     &:hover{
         text-decoration: none;
     }
@@ -82,7 +94,9 @@ const CoffeeBtn = styled(MediaBtn)`
     background: black;
     color: white;
 `
-const ImgWrapper = styled.a``;
+const ImgWrapper = styled(Link)`
+    text-decoration: none;
+`;
 const Image = styled.img`
     max-height: 35px;
 `;

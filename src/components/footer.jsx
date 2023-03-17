@@ -36,7 +36,7 @@ const FooterSection = styled.section`
     font-family: 'Outfit', sans-serif;
     margin-top: 200px;
     margin-bottom: 100px;
-    @media screen and (max-width: ${({theme})=> theme.deviceSize.smallScreen}){
+    @media screen and (max-width: ${({ theme }) => theme.deviceSize.smallScreen}){
         margin-top: 100px;
     }
 `;

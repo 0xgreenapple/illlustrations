@@ -13,9 +13,12 @@ const defaultTheme = {
     figma_plugin: "#45FC78",
     dark_gray_text: "rgba(45, 45, 45, 0.66)",
     dark_plugin_background: "#353535",
+    red: "#FF5050",
+    img_gradient:
+      "linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 0.01%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%)"
   },
   fontSize: {
-    mobileBtn: "9px",
+    mobileBtn: "16px",
     mobileP: "12px",
     mobileText: "14px",
   },
